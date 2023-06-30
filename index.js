@@ -1,9 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const morgan = require('morgan');
-const userRoutes = require('./routes/user-routes');
-const thoughtRoutes = require('./routes/thought-routes');
-const reactionRoutes = require('./routes/reaction-routes');
+const routes = require('./routes');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -11,12 +8,9 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan('dev'));
 
 // Routes
-app.use('/api', userRoutes);
-app.use('/api', thoughtRoutes);
-app.use('/api', reactionRoutes);
+app.use(routes);
 
 // Default route
 app.use((req, res) => {
