@@ -5,7 +5,7 @@
 
 ## Description
 
-This project is a social networking simulation app where you can create, update, and delete users.
+This project is a social networking simulation app where you can create, update, and delete users. Users can add eachother as friends and post thoughts. Friends can create reactions to friends thoughts. Reactions can also be deleted.
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ MongoDB, Express, Insomnia
 
 ## Usage
 
-N/A
+In Insomnia you will navigate the various api routes in order to achieve the functions.
 
 ## License
 
