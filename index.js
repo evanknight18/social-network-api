@@ -18,12 +18,12 @@ app.use((req, res) => {
 });
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost/socialnetworkdb', {
+mongoose.connect('mongodb://127.0.0.1:27017/socialnetworkdb', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
+  serverSelectionTimeoutMS: 3000, // Optional, to reduce connection timeout
 })
+
   .then(() => {
     console.log('Connected to MongoDB');
     // Start the server

@@ -1,41 +1,38 @@
 const mongoose = require('mongoose');
 const { User, Thought } = require('../models');
 
-mongoose.connect('mongodb://localhost/socialnetworkdb', {
+mongoose.connect('mongodb://127.0.0.1:27017/socialnetworkdb', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
+  serverSelectionTimeoutMS: 3000, // Optional, to reduce connection timeout
 });
 
 const userData = [
   {
-    username: 'user1',
-    email: 'user1@example.com',
+    username: 'evanknight18',
+    email: 'evanknight18@gmail.com',
     thoughts: [],
     friends: [],
   },
   {
-    username: 'user2',
-    email: 'user2@example.com',
+    username: 'mariahester9',
+    email: 'mariahester9@gmail.com',
     thoughts: [],
     friends: [],
   },
-  // Add more user data as needed
 ];
 
 const thoughtData = [
   {
     thoughtText: 'This is the first thought',
-    username: 'user1',
+    username: 'evanknight18',
     reactions: [],
   },
   {
     thoughtText: 'This is the second thought',
-    username: 'user2',
+    username: 'umariahester9',
     reactions: [],
   },
-  // Add more thought data as needed
 ];
 
 const seedDatabase = async () => {
